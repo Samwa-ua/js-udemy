@@ -25,14 +25,27 @@
 
 //Function declaration
 
-function calcAge1(birthYear) {
-    return 2037 - birthYear;
-}
-const age1 = calcAge1(1984);
+// function calcAge1(birthYear) {
+//     return 2037 - birthYear;
+// }
+// const age1 = calcAge1(1984);
 
-//Function expression
-const calcAge2 = function (birthYear) {
-    return 2037 - birthYear;
+//Function expression exprassions produce value`s
+// const calcAge2 = function (birthYear) {
+//     return 2037 - birthYear;
+// }
+// const age2 = calcAge2(1991);
+// console.log(age1, age2);
+
+//Arrov function
+// const calcAge3 = birthYear => 2087 - birthYear;
+// const age3 = calcAge3(1984);
+// console.log(age3);
+
+const yearsUntilRetairment = (birthYear, firstName) => {
+    const age = 2021 - birthYear;
+    const retairment = 65 - age;
+    // return retairment;
+    return `${firstName} retires in ${retairment} years`;
 }
-const aga2 = calcAge2(1991);
-console.log(age1, aga2);
+console.log(yearsUntilRetairment(1984, "Andy"));
