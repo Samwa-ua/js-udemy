@@ -28,3 +28,4 @@ function calcAge1(birthYear) {
 }
 
 calcAge1(1984);
+console.log(calcAge1);
