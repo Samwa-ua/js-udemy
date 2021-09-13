@@ -117,27 +117,27 @@
 // andy['linkedIn'] = "yes";
 // console.log(`${andy.firstName} has ${andy.friends.length} friends, and his best friend is called ${andy.friends[2]}`);
 
-const andy = {
-    firstName: 'Andrii',
-    lastName: 'Skokovskyi',
-    birthYear: 1984,
-    job: 'freelancer',
-    friends: ['Mika', 'Setsuna', 'Lightning'],
-    hasDriverLicens: true,
-    // calcAge: function (birthYear) {
-    //     return 2021 - birthYear;
-    // }
-    // calcAge: function () {
-    //     return 2021 - this.birthYear;
-    // }
-    getSummary: function () {
-        return `${this.firstName} is ${this.calcAge()}-years old ${this.job}, and he has ${this.hasDriverLicens ? 'a' : 'no'} driver's license.`
-    },
-    calcAge: function () {
-        this.age = 2021 - this.birthYear;
-        return this.age;
-    }
-};
+// const andy = {
+//     firstName: 'Andrii',
+//     lastName: 'Skokovskyi',
+//     birthYear: 1984,
+//     job: 'freelancer',
+//     friends: ['Mika', 'Setsuna', 'Lightning'],
+//     hasDriverLicens: true,
+//     // calcAge: function (birthYear) {
+//     //     return 2021 - birthYear;
+//     // }
+//     // calcAge: function () {
+//     //     return 2021 - this.birthYear;
+//     // }
+//     getSummary: function () {
+//         return `${this.firstName} is ${this.calcAge()}-years old ${this.job}, and he has ${this.hasDriverLicens ? 'a' : 'no'} driver's license.`
+//     },
+//     calcAge: function () {
+//         this.age = 2021 - this.birthYear;
+//         return this.age;
+//     }
+// };
 // console.log(andy.calcAge());
 // console.log(andy.age);
 // console.log(andy.age);
@@ -146,4 +146,107 @@ const andy = {
 // console.log(andy['calcAge'](andy.birthYear));
 // console.log(andy.calcAge(1984));
 
-console.log(andy.getSummary());
+// console.log(andy.getSummary());
+
+function hello() {
+    console.log('Hello', this)
+}
+
+const person = {
+    name: 'Andrew',
+    age: 37,
+    sayHello: hello,
+    logInfo: function (job, phone) {
+        console.group(`${this.name} info:`)
+        console.log(`Name is ${this.name}`)
+        console.log(`Age is ${this.age}`)
+        console.log(`job is ${job}`)
+        console.log(`Phone is ${phone}`)
+        console.groupEnd()
+    }
+}
+
+const lena = {
+    name: 'Elena',
+    age: 28
+}
+// person.logInfo();
+
+// person.logInfo.bind(lena, 'Frontend', '015 025 45')();
+// person.logInfo.call(lena, 'Frontend', '015 025 45');
+// person.logInfo.apply(lena, ['Frontend', '015 025 45']);
+
+const array = [1, 2, 3, 4, 5];
+const array2 = [5, 4, 3, 2, 1];
+
+// Array.prototype.multBy = function (n) {
+//     return this.map(function (i) {
+//         return i * n;
+//     } )
+// }
+
+
+// console.log(array.multBy(2));
+
+
+// function multBy(arr, n) {
+//     return arr.map(function (i) {return i * n;});
+// }
+// console.log(multBy(array, 2));
+
+// Array.prototype.multiplyBy = function (n) {
+//     return this.map(function (i) {
+//         return i * n;
+//     })
+// }
+// console.log(array.multiplyBy(10));
+
+// function createCalcFunction(n) {
+//     return function () {
+//         console.log(1000 * n);
+//     }
+// }
+// const calc = createCalcFunction(42);
+// calc();
+
+// function createIncrementor(n) {
+//     return function (num) {
+//         return n + num;
+//     }
+// }
+// const addOne = createIncrementor(1);
+// const addTen = createIncrementor(10);
+// console.log(addOne(10));
+// console.log(addTen(10));
+
+
+// function urlGenerator(domain) {
+//     return function (url) {
+//         return (`https://${url}.${domain}.ua`);
+//     }
+// }
+
+// const comUrl = urlGenerator('com');
+// console.log(comUrl('bustools'));
+
+const person1 = {
+    name: 'Michal',
+    age: 22,
+    job: 'Frontend',
+    }
+const person2 = {
+    name: 'Elena',
+    age: 19,
+    job: 'SMM'
+}
+
+function bind(context, fn) {
+    return function (...args) {
+        fn.apply(context, args);
+    }
+}
+function logPerson() {
+    console.log(`Person: ${this.name}, ${this.age}, ${this.job}`)
+}
+
+bind(person1, logPerson)();
