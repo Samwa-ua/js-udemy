@@ -229,24 +229,88 @@ const array2 = [5, 4, 3, 2, 1];
 // const comUrl = urlGenerator('com');
 // console.log(comUrl('bustools'));
 
-const person1 = {
-    name: 'Michal',
-    age: 22,
-    job: 'Frontend',
-    }
-const person2 = {
-    name: 'Elena',
-    age: 19,
-    job: 'SMM'
-}
+// const person1 = {
+//     name: 'Michal',
+//     age: 22,
+//     job: 'Frontend',
+//     }
+// const person2 = {
+//     name: 'Elena',
+//     age: 19,
+//     job: 'SMM'
+// }
 
-function bind(context, fn) {
-    return function (...args) {
-        fn.apply(context, args);
-    }
-}
-function logPerson() {
-    console.log(`Person: ${this.name}, ${this.age}, ${this.job}`)
-}
+// function bind(context, fn) {
+//     return function (...args) {
+//         fn.apply(context, args);
+//     }
+// }
+// function logPerson() {
+//     console.log(`Person: ${this.name}, ${this.age}, ${this.job}`)
+// }
 
-bind(person1, logPerson)();
+// bind(person1, logPerson)();
+
+// console.log('Start');
+// window.setTimeout(function () {
+//     console.log('Inside timeout, after 2000 seconds')
+// }, 2000)
+    
+// console.log('End');
+
+console.log('Request data ...')
+
+// setTimeout(() => {
+//     console.log('Preparing data...')
+
+//     const backendData = {
+//         server: 'aws',
+//         port: 2000,
+//         status: 'working'
+//     }
+//     setTimeout(() => {
+//         backendData.modified = true
+//         console.log('Data received', backendData)
+//     }, 2000);
+// }, 2000)
+
+// const p = new Promise(function (resolve, reject) {
+//     setTimeout(() => {
+//         console.log('Preparing data...')
+//         const backendData = {
+//             server: 'aws',
+//             port: 2000,
+//             status: 'working'
+//         }
+//         resolve(backendData)
+//     }, 2000);
+// })
+
+// p.then(data => {
+//     return p2 = new Promise(function (resolve, reject) {
+//         setTimeout(() => {
+//             data.modified = true
+//             resolve(data)
+//         }, 2000);
+//     })
+
+// })
+//     .then(clientData => {
+//     clientData.fromPromise = true
+//     console.log('Data received', clientData)
+//     return clientData
+// }).then(newData => {
+//     console.log('New data test', newData)
+// })
+//     .catch(err => console.error('Error: ', err))
+//     .finally(() => console.log('Finaly'))
+
+const sleep = ms => {
+    return new Promise(resolve => {
+    setTimeout(() => resolve(), ms);
+    })
+}
+// sleep(2000).then(() => console.log('After 2 seconds'));
+// sleep(3000).then(() => console.log('After 3 seconds'))
+// Promise.all([sleep(2000), sleep(5000)]).then(() => console.log('All promises'))
+Promise.race([sleep(2000), sleep(5000)]).then(() => console.log('Race promises'))
