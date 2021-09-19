@@ -148,36 +148,36 @@
 
 // console.log(andy.getSummary());
 
-function hello() {
-    console.log('Hello', this)
-}
+// function hello() {
+//     console.log('Hello', this)
+// }
 
-const person = {
-    name: 'Andrew',
-    age: 37,
-    sayHello: hello,
-    logInfo: function (job, phone) {
-        console.group(`${this.name} info:`)
-        console.log(`Name is ${this.name}`)
-        console.log(`Age is ${this.age}`)
-        console.log(`job is ${job}`)
-        console.log(`Phone is ${phone}`)
-        console.groupEnd()
-    }
-}
+// const person = {
+//     name: 'Andrew',
+//     age: 37,
+//     sayHello: hello,
+//     logInfo: function (job, phone) {
+//         console.group(`${this.name} info:`)
+//         console.log(`Name is ${this.name}`)
+//         console.log(`Age is ${this.age}`)
+//         console.log(`job is ${job}`)
+//         console.log(`Phone is ${phone}`)
+//         console.groupEnd()
+//     }
+// }
 
-const lena = {
-    name: 'Elena',
-    age: 28
-}
+// const lena = {
+//     name: 'Elena',
+//     age: 28
+// }
 // person.logInfo();
 
 // person.logInfo.bind(lena, 'Frontend', '015 025 45')();
 // person.logInfo.call(lena, 'Frontend', '015 025 45');
 // person.logInfo.apply(lena, ['Frontend', '015 025 45']);
 
-const array = [1, 2, 3, 4, 5];
-const array2 = [5, 4, 3, 2, 1];
+// const array = [1, 2, 3, 4, 5];
+// const array2 = [5, 4, 3, 2, 1];
 
 // Array.prototype.multBy = function (n) {
 //     return this.map(function (i) {
@@ -258,7 +258,7 @@ const array2 = [5, 4, 3, 2, 1];
     
 // console.log('End');
 
-console.log('Request data ...')
+// console.log('Request data ...')
 
 // setTimeout(() => {
 //     console.log('Preparing data...')
@@ -305,12 +305,48 @@ console.log('Request data ...')
 //     .catch(err => console.error('Error: ', err))
 //     .finally(() => console.log('Finaly'))
 
-const sleep = ms => {
-    return new Promise(resolve => {
-    setTimeout(() => resolve(), ms);
-    })
-}
+// const sleep = ms => {
+//     return new Promise(resolve => {
+//     setTimeout(() => resolve(), ms);
+//     })
+// }
 // sleep(2000).then(() => console.log('After 2 seconds'));
 // sleep(3000).then(() => console.log('After 3 seconds'))
 // Promise.all([sleep(2000), sleep(5000)]).then(() => console.log('All promises'))
-Promise.race([sleep(2000), sleep(5000)]).then(() => console.log('Race promises'))
+// Promise.race([sleep(2000), sleep(5000)]).then(() => console.log('Race promises'))
+
+// function* generateFunction() {
+//     return 'Hello, I am a generator'
+// }
+// const generator = generateFunction();
+// console.log(generator.next())
+
+const markObj = {
+    fullName: 'Mark Miller',
+    mass: 78,
+    height: 1.69,
+    calcBMI: function () {
+        this.bmi = Math.floor(this.mass / this.height ** 2)
+        return this.bmi;
+    }
+};
+
+const johnObj = {
+    fullName: 'John Smith',
+    mass: 92,
+    height: 1.95,
+    calcBMI: function () {
+        this.bmi = Math.floor(this.mass / this.height ** 2)
+        return this.bmi;
+    }
+};
+
+
+markObj.calcBMI();
+johnObj.calcBMI();
+
+if (markObj.bmi < johnObj.bmi) {
+    console.log(`${johnObj.fullName}'s BMI(${johnObj.bmi}) is higher than ${markObj.fullName}'s (${markObj.bmi})`)
+} else {
+    console.log(`${markObj.fullName}'s BMI(${markObj.bmi}) is higher than ${johnObj.fullName}'s (${johnObj.bmi})`)
+}
