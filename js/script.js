@@ -350,3 +350,7 @@ if (markObj.bmi < johnObj.bmi) {
 } else {
     console.log(`${markObj.fullName}'s BMI(${markObj.bmi}) is higher than ${johnObj.fullName}'s (${johnObj.bmi})`)
 }
+
+for (let rep = 1; rep <= 10; rep++){
+    console.log(`I need to count the 🐑 ${rep} times`)
+}
