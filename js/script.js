@@ -1,5 +1,3 @@
-
-
 //Challenge #4
 
 // const bill = parseInt(prompt("Enter the sum you need to pay"));
@@ -76,7 +74,6 @@
 
 // const shifted = friends.shift();
 // console.log(shifted);
-
 
 // console.log(friends.indexOf('Bob'));
 // console.log(friends.includes('John'));
@@ -185,9 +182,7 @@
 //     } )
 // }
 
-
 // console.log(array.multBy(2));
-
 
 // function multBy(arr, n) {
 //     return arr.map(function (i) {return i * n;});
@@ -218,7 +213,6 @@
 // const addTen = createIncrementor(10);
 // console.log(addOne(10));
 // console.log(addTen(10));
-
 
 // function urlGenerator(domain) {
 //     return function (url) {
@@ -255,7 +249,7 @@
 // window.setTimeout(function () {
 //     console.log('Inside timeout, after 2000 seconds')
 // }, 2000)
-    
+
 // console.log('End');
 
 // console.log('Request data ...')
@@ -321,36 +315,55 @@
 // const generator = generateFunction();
 // console.log(generator.next())
 
-const markObj = {
-    fullName: 'Mark Miller',
-    mass: 78,
-    height: 1.69,
-    calcBMI: function () {
-        this.bmi = Math.floor(this.mass / this.height ** 2)
-        return this.bmi;
-    }
-};
+// const markObj = {
+//     fullName: 'Mark Miller',
+//     mass: 78,
+//     height: 1.69,
+//     calcBMI: function () {
+//         this.bmi = Math.floor(this.mass / this.height ** 2)
+//         return this.bmi;
+//     }
+// };
 
-const johnObj = {
-    fullName: 'John Smith',
-    mass: 92,
-    height: 1.95,
-    calcBMI: function () {
-        this.bmi = Math.floor(this.mass / this.height ** 2)
-        return this.bmi;
-    }
-};
+// const johnObj = {
+//     fullName: 'John Smith',
+//     mass: 92,
+//     height: 1.95,
+//     calcBMI: function () {
+//         this.bmi = Math.floor(this.mass / this.height ** 2)
+//         return this.bmi;
+//     }
+// };
 
+// markObj.calcBMI();
+// johnObj.calcBMI();
 
-markObj.calcBMI();
-johnObj.calcBMI();
+// if (markObj.bmi < johnObj.bmi) {
+//     console.log(`${johnObj.fullName}'s BMI(${johnObj.bmi}) is higher than ${markObj.fullName}'s (${markObj.bmi})`)
+// } else {
+//     console.log(`${markObj.fullName}'s BMI(${markObj.bmi}) is higher than ${johnObj.fullName}'s (${johnObj.bmi})`)
+// }
 
-if (markObj.bmi < johnObj.bmi) {
-    console.log(`${johnObj.fullName}'s BMI(${johnObj.bmi}) is higher than ${markObj.fullName}'s (${markObj.bmi})`)
-} else {
-    console.log(`${markObj.fullName}'s BMI(${markObj.bmi}) is higher than ${johnObj.fullName}'s (${johnObj.bmi})`)
-}
+// for (let rep = 1; rep <= 10; rep++){
+//     console.log(`I need to count the 🐑 ${rep} times`)
+// }
 
-for (let rep = 1; rep <= 10; rep++){
-    console.log(`I need to count the 🐑 ${rep} times`)
-}
+const temperatures = [3, -2, -6, -1, "error", 9, 13, 17, 15, 14, 9, 5];
+const newArr = [2, 8, 3, 9, -30];
+
+// const calcTemperature = function (t1, t2) {
+//   const fullTempArr = t1.concat(t2);
+//   let max = fullTempArr[0];
+//   let min = fullTempArr[0];
+//   for (let i = 0; i < fullTempArr.length; i++) {
+//     const currentTemp = fullTempArr[i];
+//     if (typeof currentTemp !== "number") continue;
+//     if (currentTemp > max) max = currentTemp;
+//     if (currentTemp < min) min = currentTemp;
+//   }
+//   console.log(max, min);
+//   return max - min;
+// };
+
+// const amplitude = calcTemperature(temperatures, newArr);
+// console.log(amplitude);
