@@ -348,22 +348,62 @@
 //     console.log(`I need to count the 🐑 ${rep} times`)
 // }
 
-const temperatures = [3, -2, -6, -1, "error", 9, 13, 17, 15, 14, 9, 5];
-const newArr = [2, 8, 3, 9, -30];
+const temperatures = [3, "a"];
+const newArr = [2, 8, -2, 12, 11, 8, -3, 99];
 
-// const calcTemperature = function (t1, t2) {
-//   const fullTempArr = t1.concat(t2);
-//   let max = fullTempArr[0];
-//   let min = fullTempArr[0];
-//   for (let i = 0; i < fullTempArr.length; i++) {
-//     const currentTemp = fullTempArr[i];
-//     if (typeof currentTemp !== "number") continue;
-//     if (currentTemp > max) max = currentTemp;
-//     if (currentTemp < min) min = currentTemp;
-//   }
-//   console.log(max, min);
-//   return max - min;
+const calcTemperatures = function (t1, t2) {
+  const temps = t1.concat(t2);
+  let max = temps[0];
+  let min = temps[0];
+  for (let i = 0; i < temps.length; i++) {
+    const indxTemp = temps[i];
+    if (typeof indxTemp !== "number") continue;
+    if (indxTemp > max) max = indxTemp;
+    if (indxTemp < min) min = indxTemp;
+  }
+  console.log(max, min);
+  return max - min;
+};
+
+const amplitude = calcTemperatures(temperatures, newArr);
+console.log(amplitude);
+
+// // const add = function (a, b) {
+// //   return a + b;
+// // };
+
+// // console.log(add(1, 3));
+// const a = "Hello";
+
+// if (a < 1) {
+//   console.log("A is greater then 1");
+// } else if (typeof a !== "number") {
+//   console.log("it is a string");
+// } else {
+//   console.log("A is smaller than 1");
+// }
+// const max = Math.max.apply(null, newArr);
+// const min = Math.min.apply(null, newArr);
+// const amplitude = max - min;
+// console.log(
+//   `The maximum temperature is ${max} the minimum temperature is ${min}, the amplitude is ${amplitude}`
+// );
+
+// const measureKelvin = function () {
+//   const measurment = {
+//     type: "temp",
+//     units: "celsius",
+//     //FIX
+//     value: Number(prompt("Degrees celsius")),
+//   };
+//   //FIND
+//   console.table(measurment);
+//   console.log(measurment);
+//   console.log(measurment.value);
+//   console.warn(measurment.value);
+//   console.error(measurment.value);
+//   const kelvin = measurment.value + 273;
+//   return kelvin;
 // };
-
-// const amplitude = calcTemperature(temperatures, newArr);
-// console.log(amplitude);
+//A) INDETIFY
+// console.log(measureKelvin());
