@@ -348,25 +348,25 @@
 //     console.log(`I need to count the 🐑 ${rep} times`)
 // }
 
-const temperatures = [3, "a"];
-const newArr = [2, 8, -2, 12, 11, 8, -3, 99];
+// const temperatures = [3, "a"];
+// const newArr = [2, 8, -2, 12, 11, 8, -3, 99];
 
-const calcTemperatures = function (t1, t2) {
-  const temps = t1.concat(t2);
-  let max = temps[0];
-  let min = temps[0];
-  for (let i = 0; i < temps.length; i++) {
-    const indxTemp = temps[i];
-    if (typeof indxTemp !== "number") continue;
-    if (indxTemp > max) max = indxTemp;
-    if (indxTemp < min) min = indxTemp;
-  }
-  console.log(max, min);
-  return max - min;
-};
+// const calcTemperatures = function (t1, t2) {
+//   const temps = t1.concat(t2);
+//   let max = temps[0];
+//   let min = temps[0];
+//   for (let i = 0; i < temps.length; i++) {
+//     const indxTemp = temps[i];
+//     if (typeof indxTemp !== "number") continue;
+//     if (indxTemp > max) max = indxTemp;
+//     if (indxTemp < min) min = indxTemp;
+//   }
+//   console.log(max, min);
+//   return max - min;
+// };
 
-const amplitude = calcTemperatures(temperatures, newArr);
-console.log(amplitude);
+// const amplitude = calcTemperatures(temperatures, newArr);
+// console.log(amplitude);
 
 // // const add = function (a, b) {
 // //   return a + b;
@@ -407,3 +407,61 @@ console.log(amplitude);
 // };
 //A) INDETIFY
 // console.log(measureKelvin());
+
+// const upperCase = function (arg) {
+//   return arg.toUpperCase();
+// };
+
+// console.log(upperCase("hello"));
+
+// const tripleExclaim = function (arg) {
+//   return arg + "!!!";
+// };
+// const split =
+// const join =
+// const copy =
+
+// const createComposition = (f1, f2) => (value) => f2(f1(value));
+// console.log(createComposition(upperCase("hello"), tripleExclaim()));
+
+// const result = createComposition( // 5 function-arguments )
+
+// let createComposition = function (f, g) {
+//   return function (x) {
+//     return f(g(x));
+//   };
+// };
+// let upperCase = function (string) {
+//   return string.toUpperCase();
+// };
+// let tripleExclaim = function (exclaim) {
+//   return exclaim + "!!!";
+// };
+// let result = createComposition(tripleExclaim, upperCase);
+
+// console.log(result("hello"));
+
+// function multiply(a, b = 1) {
+//   return a * b;
+// }
+
+const createComposition = (a, b, c, d, e) => (data) => a(b(c(d(e(data)))));
+const upperCase = function (string) {
+  return string.toUpperCase();
+};
+const tripleExclaim = function (exclaim) {
+  return exclaim + "!!!";
+};
+const split = function (string) {
+  return string.split("_");
+};
+const join = function (string) {
+  return string.join(" ");
+};
+const copy = function (string) {
+  return string + " " + string;
+};
+
+let result = createComposition(copy, join, split, tripleExclaim, upperCase);
+console.log(result("total sale"));
+console.log(copy("by_ticket_now"));
