@@ -348,8 +348,8 @@
 //     console.log(`I need to count the 🐑 ${rep} times`)
 // }
 
-// const temperatures = [3, "a"];
-// const newArr = [2, 8, -2, 12, 11, 8, -3, 99];
+const temperatures = [3, "a"];
+const newArr = [2, 8, -2, 12, 11, 8, -3, 99];
 
 // const calcTemperatures = function (t1, t2) {
 //   const temps = t1.concat(t2);
@@ -445,23 +445,119 @@
 //   return a * b;
 // }
 
-const createComposition = (a, b, c, d, e) => (data) => a(b(c(d(e(data)))));
-const upperCase = function (string) {
-  return string.toUpperCase();
-};
-const tripleExclaim = function (exclaim) {
-  return exclaim + "!!!";
-};
-const split = function (string) {
-  return string.split("_");
-};
-const join = function (string) {
-  return string.join(" ");
-};
-const copy = function (string) {
-  return string + " " + string;
+// const createComposition = (a, b, c, d, e) => (data) => a(b(c(d(e(data)))));
+// const upperCase = function (string) {
+//   return string.toUpperCase();
+// };
+// const tripleExclaim = function (exclaim) {
+//   return exclaim + "!!!";
+// };
+// const split = function (string) {
+//   return string.split("_");
+// };
+// const join = function (string) {
+//   return string.join(" ");
+// };
+// const copy = function (string) {
+//   return string + " " + string;
+// };
+
+// let result = createComposition(copy, join, split, tripleExclaim, upperCase);
+// console.log(result("total sale"));
+// console.log(copy("by_ticket_now"));
+
+// function say(message) {
+//   message = typeof message !== "undefined" ? message : "hilter";
+//   console.log(message);
+// }
+
+// say();
+// say("hay");
+
+// function overloadedFunc(arg1 = [1, 2, 3], arg2 = 2, func.sum) {
+//   if (typeof arg1 === "number") {
+//     return arg1 * arg2;
+//   } else {
+//     arg = arg1.map((el) => el * arg2);
+//     return arg;
+//   }
+
+//   // your code
+// }
+
+// function overloadedFunc(arg1 = [1, 2, 3], arg2 = 2) {
+//   if (typeof arg1 === "number") {
+//     return arg1 * arg2;
+//   } else if (typeof arg3 === "object") {
+//     return overloadedFunc(arg3.func.sum);
+//   } else {
+//     let test = arg1.map((el) => el * arg2);
+//     return test;
+//   }
+
+//   // your code
+// }
+// console.log(overloadedFunc(undefined, undefined, 2));
+
+// function overloadedFunc(
+//   arg1 = [1, 2, 3],
+//   arg2 = 2,
+//   arg3 = (x, y) => {
+//     if (!Array.isArray(x)) {
+//       return x * y;
+//     }
+//     return x.map((el) => el * y);
+//   }
+// ) {
+//   return arg3(arg1, arg2);
+// }
+
+// const calcTemperature = function (temps1, temps2) {
+//   const temps = temps1.concat(temps2);
+//   let max = temps[0];
+//   let min = temps[0];
+//   for (i = 0; i < temps.length; i++) {
+//     const indxTemp = temps[i];
+//     if (indxTemp > max) max = indxTemp;
+//     if (indxTemp < min) min = indxTemp;
+//   }
+//   console.log(max, min);
+//   return max - min;
+// };
+
+// const result = calcTemperature(temperatures, newArr);
+// console.log(result);
+
+// const arrg1 = [17, 21, 23];
+// const arrg2 = [12, 5, -5, 0, 4];
+
+// const printForecast = function (arr) {
+//   let info = "";
+//   for (let i = 0; i < arr.length; i++) {
+//     info = info + ` ${arr[i]}°C in ${i + 1} days ...`;
+//   }
+//   return "... " + info;
+// };
+
+// const printForecast2 = (arr) => {
+//   let info = "";
+//   for (let i = 0; i < arr.length; i++) {
+//     info = info + ` ${arr[i]}°C in ${i + 1} days ...`;
+//   }
+//   return "... " + info;
+// };
+
+// console.log(printForecast(arrg1));
+// console.log(printForecast2(arrg2));
+
+const arr = [1, 2, 3];
+
+const transformArrayToString = (arr) => {
+  let str = "";
+  for (let i = 0; i < arr.length; i++) {
+    str = str + " " + arr[i];
+  }
+  return str;
 };
 
-let result = createComposition(copy, join, split, tripleExclaim, upperCase);
-console.log(result("total sale"));
-console.log(copy("by_ticket_now"));
+console.log(transformArrayToString(arr));
